@@ -7,8 +7,13 @@
 3. Install docker on your locak machine (Optional)
 4. Clone this repo ``git clone https://github.com/TradeBlock/tb-hackathon.git``
 5. install [python version 3.10](https://www.python.org/downloads/) on your local development environment.
-6. run ``pip install -r requirements.txt`` in directory you cloned
-7. create .env file # for AWS credentials
+8. run ``pip install -r requirements.txt`` in directory you cloned
+9. create .env file # for AWS credentials
+
+### Optional Setup - Create Python Virtual Environment
+1. Create the environment with ``python3.10 -m venv .venv``
+2. Activate the environment before step 8 in Technical Setup with ``source .venv/bin/activate``
+3. Continue with setp 8 in Technical Setup
 
 ### Problem Statement 
 
