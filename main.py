@@ -77,3 +77,47 @@ if __name__ == '__main__':
     # example to stream data
     for row in STREAM.iter_records():
         print(row)
+
+# Example Interaction
+#
+# Given the following incoming trades, each line represents one csv row:
+#   (1) okfq-xbt-usd,14682.26,2,1514765115
+#   (2) okf1-xbt-usd,13793.65,2,1514765115
+#   (3) stmp-xbt-usd,13789.01,0.00152381,1514765115
+#
+# When you receive trade 1 through to your algorithm, if you decide to make
+# a BUY trade for 3 xbt, the order will start to fill in the following steps
+#   [1] 1 unit xbt from trade 1 (%50 available volume from the trade data)
+#   [2] 1 unit xbt from trade 2
+#   [3] receiving trade 3, you decide to put in another BUY trade:
+#       i. Trade will be rejected, because we have not finished filling your 
+#          previous trade
+#       ii. The fill object will contain additional fields with error data
+#           a. "error_code", which will be "rejected"; and
+#           b. "error_msg", description why the trade was rejected.
+#
+# Responses during these iterations:
+#   [1] success resulting in:
+#       {
+#           "price": 14682.26,
+#           "volume": 1,
+#           "unfilled": {"xbt": 2, "eth": 0 }
+#       }
+#   [2]
+#       {
+#           "price": 13793.65,
+#           "volume": 1,
+#           "unfilled": {"xbt": 1, "eth": 0 }
+#       }
+#   [3]
+#       {
+#           "price": 13789.01,
+#           "volume": 0.000761905,
+#           "error_code": "rejected",
+#           "error_msg": "filling trade in progress",
+#           "unfilled": {"xbt": 0.999238095, "eth": 0 }
+#       }
+#
+# In step 3, the new trade order that you submitted is rejected; however,
+# we will continue to fill that order that was already in progress, so
+# the price and volume are CONFIRMED in that payload.
