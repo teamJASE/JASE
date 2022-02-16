@@ -15,6 +15,11 @@
 2. Activate the environment before step 8 in Technical Setup with ``source .venv/bin/activate``
 3. Continue with step 8 in Technical Setup
 
+### Constraints
+
+* Trades can only be a BUY or a SELL with a crytocurrency amount
+* SELL trades can only be done after BUYS (i.e. no short sell)
+
 ### Problem Statement 
 
 * To be RELEASED Thurs. 2/17/22
