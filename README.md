@@ -28,3 +28,26 @@
 
 ## Links
 
+
+## Response Data Object Definitions
+
+### Fill
+
+```
+{
+  “price”: decimal.Decimal,       # fill price
+  “volume”: decimal.Decimal,      # fill volume
+  “error_code”: str               # Optional. “rejected”
+  “error_msg”: str                # Optional. description of error
+  “unfilled”: dict[str, Decimal]  # unfilled portion of trades (xbt,eth)
+}
+```
+
+### Unfilled
+
+```
+{
+  “xbt”: decimal.Decimal,         # unfilled xbt volume
+  “eth”: decimal.Decimal,         # unfilled eth volume
+}
+```
