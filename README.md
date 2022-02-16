@@ -26,3 +26,5 @@
 * Trades can only be a BUY or a SELL with a crytocurrency amount
 * SELL trades can only be done after BUYS (i.e. no short sell)
 
+## Links
+
