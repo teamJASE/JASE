@@ -13,7 +13,7 @@
 ### Optional Setup - Create Python Virtual Environment
 1. Create the environment with ``python3.10 -m venv .venv``
 2. Activate the environment before step 8 in Technical Setup with ``source .venv/bin/activate``
-3. Continue with setp 8 in Technical Setup
+3. Continue with step 8 in Technical Setup
 
 ### Problem Statement 
 
