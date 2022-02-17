@@ -61,7 +61,15 @@
 }
 ```
 
-### References
+## Errors
+
+When an error occurs with your attempted trade, you will receive an empty fill dictionary and the
+unfilled trades dictionary—this may be caused by:
+* Insufficient funds
+* Yielded a type other than Trade or None; or
+* Invalid base currency in yielded Trade
+
+## References
 
 * [bitcoin](https://bitcoin.org/bitcoin.pdf)
 * [ethereum](https://ethereum.org/en/whitepaper/)
