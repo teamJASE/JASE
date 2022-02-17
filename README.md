@@ -51,3 +51,8 @@
   “eth”: decimal.Decimal,         # unfilled eth volume
 }
 ```
+
+### References
+
+* [bitcoin](https://bitcoin.org/bitcoin.pdf)
+* [ethereum](https://ethereum.org/en/whitepaper/)
